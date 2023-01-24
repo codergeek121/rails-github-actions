@@ -1,0 +1,33 @@
+name: Tests
+run-name: Minitest
+on: [push]
+jobs:
+  tests:
+    env:
+      RAILS_ENV: test
+      DATABASE_URL: postgres://postgres:example@localhost
+      BUNDLE_WITHOUT: development production
+
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres
+        env:
+          POSTGRES_PASSWORD: example
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: nanasess/setup-chromedriver@v1
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+          rubygems: latest
+      - run: bundle exec rails db:test:prepare
+      - run: bundle exec rails test
+      - run: bundle exec rails test:system
