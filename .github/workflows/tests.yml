@@ -28,6 +28,7 @@ jobs:
         with:
           bundler-cache: true
           rubygems: latest
+      - run: bundle exec standardrb
       - run: bundle exec rails db:test:prepare
       - run: bundle exec rails test
       - run: bundle exec rails test:system
