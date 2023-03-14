@@ -51,6 +51,9 @@ group :development, :test do
 
   # Patch-level verification for bundler https://github.com/rubysec/bundler-audit
   gem "bundler-audit"
+
+  # Static code analysis tool https://github.com/presidentbeef/brakeman
+  gem "brakeman"
 end
 
 group :development do
