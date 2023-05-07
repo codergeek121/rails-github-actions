@@ -125,6 +125,8 @@ GEM
     debug (1.7.1)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
+    dockerfile-rails (1.2.5)
+      rails
     erubi (1.12.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
@@ -164,6 +166,8 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.8)
+    nokogiri (1.14.3-aarch64-linux)
+      racc (~> 1.4)
     nokogiri (1.14.3-arm64-darwin)
       racc (~> 1.4)
     nokogiri (1.14.3-x86_64-linux)
@@ -257,6 +261,7 @@ GEM
     zeitwerk (2.6.7)
 
 PLATFORMS
+  aarch64-linux
   arm64-darwin-21
   arm64-darwin-22
   x86_64-linux
@@ -267,6 +272,7 @@ DEPENDENCIES
   bundler-audit
   capybara
   debug
+  dockerfile-rails
   importmap-rails
   jbuilder
   pg (~> 1.1)
@@ -281,7 +287,7 @@ DEPENDENCIES
   webdrivers
 
 RUBY VERSION
-   ruby 3.2.0p0
+   ruby 3.2.2p53
 
 BUNDLED WITH
    2.4.4
