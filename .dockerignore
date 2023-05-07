@@ -1,5 +1,11 @@
 # See https://docs.docker.com/engine/reference/builder/#dockerignore-file for more about ignoring files.
 
+# Ignore github workflows
+/.github/
+
+# Ignore editor specific files
+/.ruby-lsp/
+
 # Ignore git directory.
 /.git/
 
