@@ -1,7 +1,7 @@
 # syntax = docker/dockerfile:1
 
 # Make sure it matches the Ruby version in .ruby-version and Gemfile
-ARG RUBY_VERSION=3.2
+ARG RUBY_VERSION=3.2.2
 FROM ruby:$RUBY_VERSION-slim as base
 
 # Rails app lives here
@@ -21,8 +21,7 @@ RUN apt-get update -qq && \
 
 # Install application gems
 COPY Gemfile Gemfile.lock ./
-RUN bundle install && \
-    bundle exec bootsnap precompile --gemfile
+RUN bundle install
 
 
 # Copy application code
